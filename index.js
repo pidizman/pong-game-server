@@ -2,7 +2,11 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 // Inicializace HTTP serveru a Socket.io s povoleným CORS pro vývoj
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello, World!\n");
+});
+
 const io = new Server(server, {
   cors: {
     origin: "*", // Povolit přístup ze všech domén
