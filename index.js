@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
 
 const io = new Server(server, {
   cors: {
-    origin: "https://pidizman.github.io/pong-game-client/", // Povolí připojení pouze z této adresy
+    origin: "https://pidizman.github.io/", // Povolí připojení pouze z této adresy
     methods: ["GET", "POST"]
   },
 });
